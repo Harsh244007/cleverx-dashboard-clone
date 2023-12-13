@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <ColorSchemeScript />
+      {/* <ColorSchemeScript /> */}
       <body className={[Ysabeau_Font.variable, Ysabeau_Font.className].join(" ")}>
         <MantineProvider >{children}</MantineProvider>
       </body>
