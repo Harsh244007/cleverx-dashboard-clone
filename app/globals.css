@@ -3,25 +3,57 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --foreground-rgb: #212121;
+  --background: #fff;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--background);
+  transition: 0.4s all ease-out;
 }
+body * {
+  transition: 0.4s all ease-out;
+  box-sizing: border-box;
+}
+main {
+  padding-inline: 1rem;
+}
+.header-font {
+  color: #181818;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+}
+.heroTitle {
+  color: var(--gray-gray-800, #212121);
+  font-weight: 700;
+  line-height: 100%;
+}
+.heroSubTitle {
+  color: var(--gray-gray-600, #565656);
+  font-weight: 400;
+  line-height: 100%;
+}
+.heroSubTitle span {
+  color: var(--gray-gray-900, #181818);
+  margin-left: 5px;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+.mantine-Accordion-control {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mantine-Accordion-control span:first-child {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+/* .mantine-Accordion-control span:last-child {
+  font-weight: 400;
+} */
