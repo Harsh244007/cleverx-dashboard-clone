@@ -61,7 +61,7 @@ const RenderSurvey = ({ setFilteredIndustry }: { setFilteredIndustry: Dispatch<S
   return (
     <article className="w-full mx-auto py-4 lg:p-4">
       <SearchBox searchTerm={searchTerm} loading={loading} error={error} setSearchTerm={setSearchTerm} />
-      {loading ? <p>Loading...</p> : error !== "" ? <p>{error}</p> : <SurveyList surveys={filteredSurveys} />}
+      {loading ? <p>Loading...</p> : error !== "" ? <p>{error}</p> : <SurveyList setSearchTerm={setSearchTerm} surveys={filteredSurveys} />}
       {!loading && error === "" && paginationDetails.totalItems > 0 && filteredSurveys.length > 0 && (
         <div className="flex justify-center my-4">
           <PaginationButtons paginationDetails={paginationDetails} handlePageChange={handlePageChange} />

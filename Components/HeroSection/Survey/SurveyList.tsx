@@ -1,11 +1,11 @@
-import React, { memo } from "react";
+import React, { Dispatch, SetStateAction, memo } from "react";
 import SurveyCard from "./SurveyCard/SurveyCard";
 import { surveyType, surveysType } from "@/types/commonTypes";
 import SurveyNotFound from "./SurveyNotFound";
 
-const SurveyList = ({ surveys }: { surveys: surveysType }) => {
+const SurveyList = ({ surveys,setSearchTerm }: { surveys: surveysType,setSearchTerm:Dispatch<SetStateAction<string>> }) => {
   if (surveys.length === 0) {
-    return <SurveyNotFound />;
+    return <SurveyNotFound setSearchTerm={setSearchTerm} />;
   }
 
   return (
