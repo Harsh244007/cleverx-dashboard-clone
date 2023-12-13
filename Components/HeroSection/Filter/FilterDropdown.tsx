@@ -1,5 +1,4 @@
 "use client";
-
 import { Accordion } from "@mantine/core";
 import { useState } from "react";
 
@@ -20,7 +19,7 @@ const FilterDropdown = () => {
       <Accordion variant="separated" className=" border border-gray-300 rounded-md">
         <Accordion.Item className="flex flex-col py-[14px] px-[20px] border-b border-gray-300" value="country">
           <Accordion.Control>Country</Accordion.Control>
-          <Accordion.Panel>"Use"</Accordion.Panel>
+          <Accordion.Panel>Use</Accordion.Panel>
         </Accordion.Item>
         <Accordion.Item className="flex flex-col py-[14px] px-[20px] border-b border-gray-300" value="industry">
           <Accordion.Control>Industry</Accordion.Control>
