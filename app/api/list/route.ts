@@ -4,7 +4,6 @@ import Data from "@/Configs/JSON/data.json";
 
 export function GET(req: Request) {
   const params = req?.url?.includes("?") ? cleanQuery(req?.url) : { count: 10, start: 0, country: [] };
-
   const limit = (params?.count && parseInt(params?.count as string)) || 10,
     skip = (params?.start && parseInt(params?.start as string)) || 0,
     countryArr = (params?.country && params?.country) || [];
@@ -15,10 +14,10 @@ export function GET(req: Request) {
   }
 
   const totalItems = copyOfData.length;
-  const totalPages = Math.ceil(totalItems / limit);
-  const currentPage = Math.floor(skip / limit) + 1;
-
+  const totalPages = Math.ceil(totalItems / limit),
+    currentPage = Math.floor(skip / limit) + 1,
+    currentTotalItems = limit;
   const result = copyOfData.slice(skip, limit + skip);
-  const pageDetails = { totalItems, totalPages, currentPage };
+  const pageDetails = { totalItems, totalPages, currentPage, currentTotalItems };
   return Response.json({ data: result, pageDetails }, { status: 200 });
 }

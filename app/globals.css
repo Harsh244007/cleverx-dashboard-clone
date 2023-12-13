@@ -15,6 +15,8 @@ body {
 body * {
   transition: 0.4s all ease-out;
   box-sizing: border-box;
+  line-height: 100%;
+  scrollbar-width: thin;
 }
 main {
   padding-inline: 1rem;
@@ -57,3 +59,51 @@ main {
 /* .mantine-Accordion-control span:last-child {
   font-weight: 400;
 } */
+
+.shallow-shadow{
+  box-shadow: 0px 1px 6px 0px rgba(60, 60, 60, 0.08), 0px 2px 10px 0px rgba(60, 60, 60, 0.04); 
+}
+
+/* scroll-bar */
+::-webkit-scrollbar,
+body *::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 8px !important;
+  height: 0px;
+  background: rgb(254, 254, 254) !important;
+}
+
+::-webkit-scrollbar-thumb,
+body *::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: #6d6d6d !important;
+  border-radius: 0px;
+  -webkit-border-radius: 0ex;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+::-webkit-scrollbar-track,
+body *::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #0d9488 !important;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+body *::-webkit-scrollbar-thumb,body::-webkit-scrollbar-thumb {
+  background-color: #0d9488 !important;
+}
+body *::-webkit-scrollbar-track,body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #0d9488 !important;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+body::-webkit-scrollbar,
+body * ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}

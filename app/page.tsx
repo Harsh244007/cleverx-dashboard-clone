@@ -1,15 +1,17 @@
 import Header from "@/Components/Header";
-import { HeroTitle } from "@/Components/HeroSection/Hero";
-import FilterSection from "@/Components/HeroSection/Filter";
+import Footer from "@/Components/Footer";
+import HeroTitle from "@/Components/HeroSection/Title";
+import HeroSection from "@/Components/HeroSection";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex max-w-6xl m-auto w-full min-h-screen flex-col ">
+      <main className="flex max-w-6xl m-auto w-full min-h-screen flex-col pt-16 pb-20">
         <HeroTitle />
-        <FilterSection/>
+        <HeroSection/>
       </main>
+      <Footer/>
     </>
   );
 }

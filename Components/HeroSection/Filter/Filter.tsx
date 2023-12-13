@@ -1,12 +1,13 @@
+import { memo } from "react";
 import FilterDropdown from "./FilterDropdown";
 
-const Filters = () => {
+const Filters = ({filteredIndustry}:{filteredIndustry:string[]}) => {
   const titleText = "Filters";
   return (
-    <section className="flex flex-col gap-4">
+    <section className="hidden lg:flex py-4 flex-col gap-4 ">
       <h4>{titleText}</h4>
-      <FilterDropdown />
+      <FilterDropdown filteredIndustry={filteredIndustry}/>
     </section>
   );
 };
-export default Filters;
+export default memo(Filters);
