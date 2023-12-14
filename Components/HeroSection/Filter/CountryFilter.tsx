@@ -38,9 +38,9 @@ const CountryFilter = () => {
 
   if (store.loadingCountry) return <p className="text-center py-2">Loading Countries...</p>;
   if (error) return <p className="text-center py-2 text-red-500">{error}</p>;
-  if (store.countries.length === 0) return <p className="text-center py-2">No Countries found...</p>;
+  if (store?.countries?.length === 0) return <p className="text-center py-2">No Countries found...</p>;
   return (
-    <section className="py-2">
+    <section className="py-2 w-full">
       <ul className="divide-y divide-gray-300">
         <CustomCheckBox
           key={"countries"}

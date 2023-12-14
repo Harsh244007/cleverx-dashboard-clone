@@ -9,6 +9,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  display: flex;
   background: var(--background);
   transition: 0.4s all ease-out;
 }
@@ -60,8 +61,8 @@ main {
   font-weight: 400;
 } */
 
-.shallow-shadow{
-  box-shadow: 0px 1px 6px 0px rgba(60, 60, 60, 0.08), 0px 2px 10px 0px rgba(60, 60, 60, 0.04); 
+.shallow-shadow {
+  box-shadow: 0px 1px 6px 0px rgba(60, 60, 60, 0.08), 0px 2px 10px 0px rgba(60, 60, 60, 0.04);
 }
 
 /* scroll-bar */
@@ -93,10 +94,12 @@ body::-webkit-scrollbar-track {
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
-body *::-webkit-scrollbar-thumb,body::-webkit-scrollbar-thumb {
+body *::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
   background-color: #0d9488 !important;
 }
-body *::-webkit-scrollbar-track,body::-webkit-scrollbar-track {
+body *::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px #0d9488 !important;
   scrollbar-width: thin;
   scroll-behavior: smooth;
@@ -106,4 +109,47 @@ body::-webkit-scrollbar,
 body * ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
+}
+
+/* mantine modal */
+.mantine-Modal-root {
+  height: 100vh;
+  width: 99vw;
+  position: absolute;
+  top: 1px;
+  display: none;
+  left: 1px;
+  background: white;
+  z-index: 10;
+  overflow: auto;
+}
+.mantine-Paper-root{
+  height: 100%;
+}
+.mantine-Modal-inner,.mantine-ScrollArea-viewport{
+  overflow: auto !important;
+  overflow-x:hidden !important;
+}
+.mantine-Modal-close {
+  position: fixed;
+  top: 14px;
+  right: 10px;
+  width: 30px;
+}
+.mantine-Modal-inner {
+  width: 100%;
+}
+.mantine-Modal-header {
+  height: 50px;
+  display: flex;
+  border-bottom: 1px solid #f4f4f4;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+}
+.mantine-Modal-header h2 {
+  color: var(--Gray-Gray-800, #212121);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px; /* 100% */
 }

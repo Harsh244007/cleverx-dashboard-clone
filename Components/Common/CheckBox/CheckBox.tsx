@@ -17,31 +17,6 @@ const CustomCheckBox = ({
   searchTerm,
   handleSearch,
 }: CustomCheckBoxType) => {
-  // const [searchTerm, setSearchTerm] = useState("");
-
-  // const router = useRouter();
-  // const [selectedItems, setSelectedItems] = useState<string[]>([]);
-  // const deferdSearchTerm = useDeferredValue(searchTerm);
-
-  // const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const item = e.target.value;
-  //   if (e.target.checked) {
-  //     setSelectedItems([...selectedItems, item]);
-  //   } else {
-  //     {
-  //       redirect && router.push(`${location.search}&country=${item}`);
-  //     }
-  //     const updatedItems = selectedItems.filter((selected) => selected !== item);
-  //     setSelectedItems(updatedItems);
-  //   }
-  // };
-
-  // const filteredItems = items.filter((item) => item?.toLowerCase().includes(deferdSearchTerm.toLowerCase()));
-
-  // const handleRemoveSelectedItems = (item: string) => {
-  //   const updatedSelectedItems = selectedItems.filter((selected) => selected !== item);
-  //   setSelectedItems(updatedSelectedItems);
-  // };
 
   return (
     <div className="w-full mx-auto mt-1">
@@ -66,7 +41,7 @@ const CustomCheckBox = ({
               placeholder="Search Country"
               value={searchTerm}
               onChange={(e) => handleSearch(e.target.value)}
-              className="border border-gray-300 rounded-md px-4 py-2 w-full"
+              className="border border-gray-300 rounded-md px-4 w-full py-2 w-full"
             />
           </div>
           <div>
@@ -78,6 +53,7 @@ const CustomCheckBox = ({
                     <input
                       type="checkbox"
                       value={item}
+                      onChange={() => addItems(item)}
                       checked={[...selectedItems].includes(item)}
                       className="mr-2 w-4 h-4"
                     />

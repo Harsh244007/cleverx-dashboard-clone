@@ -16,8 +16,9 @@ const SurveyContextProvider = ({ children }: { children: React.ReactNode }) => {
           obj.industries && obj.industries.length > 0 && store.push(...obj.industries);
           return store;
         }, []);
-        // @ts-ignore set unknown error
-        const uniqueIndustries: string[] = filteredIndustry &&filteredIndustry.length > 0 ? [...new Set(filteredIndustry)] : [];
+        const uniqueIndustries: string[] =
+          // @ts-ignore set unknown error
+          filteredIndustry && filteredIndustry.length > 0 ? [...new Set(filteredIndustry)] : [];
         return {
           ...state,
           surveys: action?.payload?.data,
@@ -29,8 +30,10 @@ const SurveyContextProvider = ({ children }: { children: React.ReactNode }) => {
       case "CLEAR_ALL_FILTERS": {
         return { ...state, selectedIndustries: [], selectedCountries: [] };
       }
+      case "UPDATE_MODAL_BUTTON": {
+        return { ...state, modalButton: action?.payload };
+      }
       case "UPDATE_COUNTRIES": {
-        console.log("now updaing",action?.payload)
         return { ...state, countries: action?.payload, loadingCountry: false };
       }
 

@@ -6,7 +6,7 @@ export function cleanQuery(str: string) {
     .split("&")
     ?.reduce((store: { [key: string]: string | string[] | null }, item: string) => {
       const [key, value] = item.split("=");
-      if(key=="country" && !Array.isArray(store[key])) store[key]=[value]
+      if (key == "country" && !Array.isArray(store[key])) store[key] = [value];
       else if (store[key]) {
         Array.isArray(store[key]) ? (store[key] as string[]).push(value) : (store[key] = [store[key] as string, value]);
       } else {
@@ -44,15 +44,18 @@ export const formatDueDate = (dateString: string) => {
 
   return formattedDate;
 };
-export const handlePageQueryChange = (str:string,newValue:number)=>{
-  if(str==="") str="?count=10&start=10"
-  return str.split("&").map(part => {
-    if (part.startsWith("start=")) {
+export const handlePageQueryChange = (str: string, newValue: number) => {
+  if (str === "") str = "?count=10&start=10";
+  return str
+    .split("&")
+    .map((part) => {
+      if (part.startsWith("start=")) {
         return `start=${newValue}`;
-    }
-    return part;
-}).join("&");
-}
+      }
+      return part;
+    })
+    .join("&");
+};
 
 export const defaultPaginationDetails: paginationDetailsTypes = {
   totalItems: 0,
@@ -63,15 +66,16 @@ export const defaultPaginationDetails: paginationDetailsTypes = {
 
 export const defaultValue: defaultValuesType = {
   surveys: [],
-  countries:[],
-  industries:[],
-  selectedCountries:[],
-  selectedIndustries:[],
-  paginationDetails:defaultPaginationDetails,
-  searchSurvey:"",
-  searchIndustry:"",
-  searchCountry:'',
-  filterModal:false,
-  loadingSurveys:true,
-  loadingCountry:true,
+  countries: [],
+  industries: [],
+  selectedCountries: [],
+  modalButton: 1,
+  selectedIndustries: [],
+  paginationDetails: defaultPaginationDetails,
+  searchSurvey: "",
+  searchIndustry: "",
+  searchCountry: "",
+  filterModal: false,
+  loadingSurveys: true,
+  loadingCountry: true,
 };

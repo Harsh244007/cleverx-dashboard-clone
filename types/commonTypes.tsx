@@ -62,6 +62,7 @@ export type PaginationButtonsType = {
 export type defaultValuesType = {
   surveys: surveyType[] | [];
   countries: string[] | [];
+  modalButton:1|2;
   industries: string[] | [];
   selectedCountries: string[] | [];
   selectedIndustries: string[] | [];

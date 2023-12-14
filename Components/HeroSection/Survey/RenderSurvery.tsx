@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import { handlePageQueryChange } from "@/utils/util";
 import { SurveyContext } from "@/Configs/contexts/SurveyContext";
 import SurveyNotFound from "./SurveyNotFound";
+import FiltersMobile from "../Filter/FilterMobile";
 
 const RenderSurvey = () => {
   var query: string;
@@ -78,6 +79,7 @@ const RenderSurvey = () => {
   return (
     <article className="w-full mx-auto py-4 lg:p-4">
       <SearchBox error={error} />
+      <FiltersMobile/>
       {filteredSurveys.length >= 1 && (
         <div>
           <p className="text-gray-500 text-sm pb-2">
