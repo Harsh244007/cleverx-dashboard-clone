@@ -14,7 +14,7 @@ const DropDown = () => {
     <MantineProvider>
       <Accordion variant="separated" className=" border border-gray-300 rounded-md">
         {DropdownItems.map((item) => (
-          <CustomDropdown text={item.text} children={item.item} />
+          <CustomDropdown className={item.text=="Industry"?"border-t border-gray-300":""} text={item.text} children={item.item} />
         ))}
       </Accordion>
     </MantineProvider>
