@@ -22,7 +22,7 @@ const FilterItems = () => {
   return (
     <>
       {totalFilters > 0 && <p className="text-gray-500 text-sm pb-2">{totalFilters} filters applieed.</p>}
-      <div>
+      <div className="flex flex-wrap gap-1">
         {store.selectedCountries.length > 0 && renderSelectedFilters(store.selectedCountries, 1)}
         {store.selectedIndustries.length > 0 && renderSelectedFilters(store.selectedIndustries, 2)}
       </div>
