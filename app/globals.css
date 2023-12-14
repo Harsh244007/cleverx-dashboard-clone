@@ -123,12 +123,13 @@ body * ::-webkit-scrollbar {
   z-index: 10;
   overflow: auto;
 }
-.mantine-Paper-root{
+.mantine-Paper-root {
   height: 100%;
 }
-.mantine-Modal-inner,.mantine-ScrollArea-viewport{
+.mantine-Modal-inner,
+.mantine-ScrollArea-viewport {
   overflow: auto !important;
-  overflow-x:hidden !important;
+  overflow-x: hidden !important;
 }
 .mantine-Modal-close {
   position: fixed;
@@ -152,4 +153,12 @@ body * ::-webkit-scrollbar {
   font-size: 20px;
   font-weight: 500;
   line-height: 20px; /* 100% */
+}
+.min-w-32 {
+  max-width: 8rem;
+  min-width: 8rem;
+}
+.min-w-60 {
+  max-width: 15rem;
+  min-width: 15rem;
 }

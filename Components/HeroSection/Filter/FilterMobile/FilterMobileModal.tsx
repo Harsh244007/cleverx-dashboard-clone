@@ -19,7 +19,7 @@ const FilterMobileModal = ({ onClose }: { onClose: () => void }) => {
   ];
   return (
     <section className="p-4 flex">
-      <div className="flex flex-col w-32 sm:w-60 border-r border-gray-100">
+      <div className="flex flex-col min-w-32 w-32 sm:w-60 sm:min-w-60  border-r border-gray-100">
         {Buttons.map((item) => (
           <button
             key={item.id}
