@@ -2,21 +2,23 @@
 import { Suspense, memo, useState } from "react";
 import FilterSection from "./Filter";
 import RenderSurvey from "./Survey";
+import SurveyContextProvider from "@/Configs/contexts/SurveyProvider";
 
 const HeroSection = () => {
-  const [filteredIndustry,setFilteredIndustry] = useState<string[]>([])
   return (
     <>
       <section className="flex justify-between">
-        <Suspense>
-          <FilterSection filteredIndustry={filteredIndustry} />
-        </Suspense>
+        <SurveyContextProvider>
+          <Suspense>
+            <FilterSection />
+          </Suspense>
 
-        <Suspense>
-          <RenderSurvey setFilteredIndustry={setFilteredIndustry}/>
-        </Suspense>
+          <Suspense>
+            <RenderSurvey  />
+          </Suspense>
+        </SurveyContextProvider>
       </section>
     </>
   );
 };
-export default memo(HeroSection)
+export default memo(HeroSection);

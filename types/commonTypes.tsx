@@ -1,33 +1,27 @@
 import { Dispatch, SetStateAction } from "react";
 
-
-
-
 //hooksTypes
 export type useFilterItemsType = {
   surveys: surveysType;
   searchTerm: string;
-  deFeredSearchTerm: string;
+  countriesFilter: string[] | [];
+  industriesFilter: string[] | [];
 };
 
 export type useReFetchDataType = Dispatch<SetStateAction<boolean>>;
 
-export type useFetchDataType ={
-  url: string,
-  setSurveys: Dispatch<SetStateAction<surveysType>>,
-  loading: boolean,
-  setLoading: Dispatch<SetStateAction<boolean>>,
-  setError: Dispatch<SetStateAction<string>>,
-  setPaginationDetails:Dispatch<SetStateAction<paginationDetailsTypes>>;
-  setFilteredIndustry:Dispatch<SetStateAction<string[]>>
-}
+export type useFetchDataType = {
+  url: string;
+  setLoading: (flag: boolean) => void;
+  setError: Dispatch<SetStateAction<string>>;
+};
 
 export type paginationDetailsTypes = {
-  totalPages:number;
-  currentPage:number;
-  currentTotalItems:number;
-  totalItems:number;
-}
+  totalPages: number;
+  currentPage: number;
+  currentTotalItems: number;
+  totalItems: number;
+};
 export type ParticlesTypes = {
   className?: string;
   quantity?: number;
@@ -53,7 +47,7 @@ export type SearchBoxType = {
   searchTerm: string;
   loading: boolean;
   error: string;
-  setSearchTerm: Dispatch<SetStateAction<string>>;
+  setSearchTerm: (str: string) => void;
 };
 
 export type CustomButtonType = {
@@ -62,6 +56,20 @@ export type CustomButtonType = {
 };
 
 export type PaginationButtonsType = {
-  paginationDetails:paginationDetailsTypes;
-  handlePageChange:(i:number)=>void;
-}
+  paginationDetails: paginationDetailsTypes;
+  handlePageChange: (i: number) => void;
+};
+export type defaultValuesType = {
+  surveys: surveyType[] | [];
+  countries: string[] | [];
+  industries: string[] | [];
+  selectedCountries: string[] | [];
+  selectedIndustries: string[] | [];
+  paginationDetails: paginationDetailsTypes;
+  searchSurvey: string;
+  searchIndustry: string;
+  searchCountry: string;
+  filterModal: boolean;
+  loadingSurveys: boolean;
+  loadingCountry: boolean;
+};

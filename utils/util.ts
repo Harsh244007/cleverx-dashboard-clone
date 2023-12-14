@@ -1,4 +1,4 @@
-import { paginationDetailsTypes } from "@/types/commonTypes";
+import { defaultValuesType, paginationDetailsTypes } from "@/types/commonTypes";
 
 export function cleanQuery(str: string) {
   return str
@@ -59,4 +59,19 @@ export const defaultPaginationDetails: paginationDetailsTypes = {
   totalPages: 0,
   currentPage: 0,
   currentTotalItems: 0,
+};
+
+export const defaultValue: defaultValuesType = {
+  surveys: [],
+  countries:[],
+  industries:[],
+  selectedCountries:[],
+  selectedIndustries:[],
+  paginationDetails:defaultPaginationDetails,
+  searchSurvey:"",
+  searchIndustry:"",
+  searchCountry:'',
+  filterModal:false,
+  loadingSurveys:true,
+  loadingCountry:true,
 };
