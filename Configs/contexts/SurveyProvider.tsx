@@ -52,7 +52,10 @@ const SurveyContextProvider = ({ children }: { children: React.ReactNode }) => {
       case "INDUSTY_ADD_FILTER": {
         // @ts-ignore set unknown error
         const updatedSelectedIndustries = [...new Set([...state.selectedIndustries, action.payload])];
-        return { ...state, selectedIndustries: updatedSelectedIndustries };
+
+        // @ts-ignore set unknown error
+        const newTotalIndustries = [...new Set([action.payload,...state.industries])]
+        return { ...state, selectedIndustries: updatedSelectedIndustries,industries:newTotalIndustries };
       }
       case "INDUSTRY_REMOVE_FILTER": {
         const filteredIndustries = state.selectedIndustries.filter((item) => item !== action.payload);
@@ -69,7 +72,10 @@ const SurveyContextProvider = ({ children }: { children: React.ReactNode }) => {
       case "COUNTRY_ADD_FILTER": {
         // @ts-ignore set unknown error
         const updatedSelectedCountries = [...new Set([...state.selectedCountries, action.payload])];
-        return { ...state, selectedCountries: updatedSelectedCountries };
+        // @ts-ignore set unknown error
+        const newTotalCountries = [...new Set([action.payload,...state.countries])]
+        // console.log(action.payload,updatedSelectedCountries,"selected countrieS",state.countries,newTotalCountries)
+        return { ...state, selectedCountries: updatedSelectedCountries ,countries:newTotalCountries};
       }
       case "COUNTRY_REMOVE_FILTER": {
         const filteredCountries = state.selectedCountries.filter((item) => item !== action.payload);

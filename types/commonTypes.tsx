@@ -56,7 +56,6 @@ export type CustomButtonType = {
 };
 
 export type PaginationButtonsType = {
-  paginationDetails: paginationDetailsTypes;
   handlePageChange: (i: number) => void;
 };
 export type defaultValuesType = {

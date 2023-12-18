@@ -90,7 +90,7 @@ const RenderSurvey = () => {
       )}
 
       <div className="flex justify-center my-4">
-        <PaginationButtons paginationDetails={store.paginationDetails} handlePageChange={handlePageChange} />
+        <PaginationButtons  handlePageChange={handlePageChange} />
       </div>
     </article>
   );

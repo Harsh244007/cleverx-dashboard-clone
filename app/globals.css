@@ -162,3 +162,7 @@ body * ::-webkit-scrollbar {
   max-width: 15rem;
   min-width: 15rem;
 }
+
+.mantine-Accordion-chevron[data-rotate="true"]{
+  transform: rotate(180deg);
+}
