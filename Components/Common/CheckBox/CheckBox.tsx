@@ -37,7 +37,7 @@ const CustomCheckBox = ({
           </div>
           <div className="mb-4">
             <input
-              type="text"
+              type="search"
               placeholder="Search Country"
               value={searchTerm}
               onChange={(e) => handleSearch(e.target.value)}
