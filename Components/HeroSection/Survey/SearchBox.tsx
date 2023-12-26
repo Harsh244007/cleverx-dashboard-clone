@@ -11,7 +11,7 @@ const SearchBox = ({error}:{error:string}) => {
   return (
     <div className="mb-3 lg:mb-6">
       <input
-        type="text"
+        type="search"
         placeholder="Search oppurtunities"
         value={store.searchSurvey}
         disabled={store.loadingSurveys || error !== ""}
