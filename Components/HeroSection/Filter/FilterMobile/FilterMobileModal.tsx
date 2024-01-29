@@ -18,7 +18,7 @@ const FilterMobileModal = ({ onClose }: { onClose: () => void }) => {
     { text: "Industry", id: 2 },
   ];
   return (
-    <section className="p-4 flex">
+    <section className="p-4 flex h-full">
       <div className="flex flex-col min-w-32 w-32 sm:w-60 sm:min-w-60  border-r border-gray-100">
         {Buttons.map((item) => (
           <button
